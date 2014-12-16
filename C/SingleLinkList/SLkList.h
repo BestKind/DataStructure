@@ -1,6 +1,3 @@
-
-#include <stdio.h>
-
 /*****************************************************************************
  * 版权所有 (C)2012, 九江学院嵌入式研发团队。
  *
@@ -19,11 +16,10 @@
  *    修改内容：
  * 修改记录2：…
  ******************************************************************************/
-
-#ifndef  LKLIST_H_
-#define  LKLIST_H_
-
 #include "Types.h"
+
+#ifndef  _SLKLIST_H_
+#define  _SLKLIST_H_
 
 /*****************************************************************************
  *                        常量                                               *
@@ -100,4 +96,4 @@ WORD ListInsert(T_LinkList *ptL, int iInPosition, elemTypeLkL *peInValue);
 WORD ListDelete(T_LinkList *ptL, int iInPosition, elemTypeLkL *peOutValue);
 
 
-#endif /* defined(__lklist__) */
+#endif /* defined(__SLKLIST__) */
