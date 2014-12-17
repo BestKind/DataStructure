@@ -1,25 +1,26 @@
 /*****************************************************************************
- * 版权所有 (C)2012, 九江学院嵌入式研发团队。
- *
- * 文件名称： // lklist.h
- * 文件标识： // 见配置管理计划书
- * 内容摘要： // 链表的创建、清空、初始化、查找、插入、删除等函数说明
- * 其它说明： // 其它内容的说明
- * 当前版本： // 输入当前版本
- * 作    者： //
- * 完成日期： // 2012年5月1日
+ * 文件名称：  lklist.h
+ * 内容摘要：  链表的创建、清空、初始化、查找、插入、删除等函数说明
+ * 当前版本： V1.0
+ * 作    者：liao
+ * 完成日期： 2014年12月17日
  *
  * 修改记录1：// 修改历史记录，包括修改日期、修改者及修改内容
- *    修改日期：
- *    版 本 号：
- *    修 改 人：
- *    修改内容：
+ * 修改日期：
+ * 版 本 号：
+ * 修 改 人：
+ * 修改内容：
  * 修改记录2：…
+ * @license ZPL (http://zpl.pub/v1)
+ * Copyright (c) 2014  SmallLeg Team
  ******************************************************************************/
+
 #include "Types.h"
 
-#ifndef  _SLKLIST_H_
-#define  _SLKLIST_H_
+#ifndef  _LKLIST_H_
+#define  _LKLIST_H_
+
+
 
 /*****************************************************************************
  *                        常量                                               *
@@ -59,16 +60,16 @@ typedef struct LinkList
  *                           链表操作函数定义                                *
  *****************************************************************************/
 
-// 初始化单链表,OK:成功,OVERFLOW:溢出
+// 初始化单链表,OK:成功,OVERFLOW1:溢出
 WORD ListInit(T_LinkList **ptL);
 
 // 清空单链表,OK:成功
 WORD ListClear(T_LinkList *ptL);
 
-// 头插法创建单链表,OK:成功,OVERFLOW:溢出
+// 头插法创建单链表,OK:成功,OVERFLOW1:溢出
 WORD ListHeadCreate(T_LinkList *ptL,int iInSize, void (*Input)(elemTypeLkL *));
 
-// 尾插法创建单链表,OK:成功,OVERFLOW:溢出
+// 尾插法创建单链表,OK:成功,OVERFLOW1:溢出
 WORD ListTailCreate(T_LinkList *ptL,int iInSize, void (*Input)(elemTypeLkL *));
 
 // 遍历单链表,OK:成功,ERROR:链表为空
@@ -89,11 +90,11 @@ WORD ListValueFind(T_LinkList *ptL, elemTypeLkL *peInValue, int *piOutPosition, 
 // 更新单链表,OK:成功,ERROR:位置不合法
 WORD ListUpdate(T_LinkList *ptL, int iInPosition, elemTypeLkL *peInValue);
 
-// 插入单链表,OK:成功,ERROR:位置不合法,OVERFLOW:溢出
+// 插入单链表,OK:成功,ERROR:位置不合法,OVERFLOW1:溢出
 WORD ListInsert(T_LinkList *ptL, int iInPosition, elemTypeLkL *peInValue);
 
 // 删除单链表,OK:成功,ERROR:位置不合法
 WORD ListDelete(T_LinkList *ptL, int iInPosition, elemTypeLkL *peOutValue);
 
 
-#endif /* defined(__SLKLIST__) */
+#endif /* defined(__LKLIST__) */

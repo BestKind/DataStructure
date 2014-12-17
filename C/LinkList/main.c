@@ -1,12 +1,9 @@
 /*****************************************************************************
- 
- * 文件名称： // command.h
- * 文件标识： // 见配置管理计划书
- * 内容摘要： // 简要描述本文件的内容，包括主要模块、函数及其功能的说明
- * 其它说明： // 其它内容的说明
- * 当前版本： // 输入当前版本
- * 作    者： //
- * 完成日期： // 2012年5月1日
+ * 文件名称： main.c
+ * 内容摘要： 单链表的测试main文件
+ * 当前版本： V1.0
+ * 作    者：liao
+ * 完成日期： 2014年12月17日
  *
  * 修改记录1：// 修改历史记录，包括修改日期、修改者及修改内容
  * 修改日期：
@@ -14,10 +11,12 @@
  * 修 改 人：
  * 修改内容：
  * 修改记录2：…
+ * @license ZPL (http://zpl.pub/v1)
+ * Copyright (c) 2014  SmallLeg Team
  ******************************************************************************/
 
 #include <stdio.h>
-#include "SLkList.h"
+#include "LkList.h"
 
 // 一些函数声明
 void menu();
@@ -50,7 +49,7 @@ int main(int argc, const char * argv[])
             case 1:
             {
                 iState = ListInit(&ptL);
-                if(OVERFLOW == iState)
+                if(OVERFLOW1 == iState)
                 {
                     printf("\n空间溢出！创建单链表失败！");
                 }
@@ -67,7 +66,7 @@ int main(int argc, const char * argv[])
                 scanf("%d", &iSize);
                 
                 iState = ListHeadCreate(ptL, iSize, InputElem);
-                if(OVERFLOW == iState)
+                if(OVERFLOW1 == iState)
                 {
                     printf("\n空间溢出！创建单链表结点失败！");
                 }
@@ -84,7 +83,7 @@ int main(int argc, const char * argv[])
                 scanf("%d", &iSize);
                 
                 iState = ListTailCreate(ptL, iSize, InputElem);
-                if(OVERFLOW == iState)
+                if(OVERFLOW1 == iState)
                 {
                     printf("\n空间溢出！创建单链表结点失败！");
                 }
@@ -115,12 +114,7 @@ int main(int argc, const char * argv[])
                 }
                 if (OK == iState)
                 {
-#if DEBUG
                     printf("\n链表中第%d个位置上的值为:%d\n",iPosition, eValue);
-#else
-                    printf("\n链表中第%d个位置上的学号为:%s\n",iPosition, eValue.cExamNo);
-                    printf("\n链表中第%d个位置上的姓名为:%s\n",iPosition, eValue.cName);
-#endif
                     
                 }
                 break;
@@ -141,12 +135,8 @@ int main(int argc, const char * argv[])
                 }
                 if (OK == iState)
                 {
-#if DEBUG
                     printf("\n链表中第%d个位置上的值为:%d\n",iPosition, eValue);
-#else
-                    printf("\n链表中第%d个位置上的学号为:%s\n",iPosition, eValue.cExamNo);
-                    printf("\n链表中第%d个位置上的姓名为:%s\n",iPosition, eValue.cName);
-#endif
+
                 }
                 break;
             }
@@ -157,15 +147,10 @@ int main(int argc, const char * argv[])
                 
                 printf("\n请输入需要更新元素的位置：");
                 scanf("%d", &iPosition);
-#if DEBUG
+
                 printf("请输入需要更新的元素：");
                 scanf("%d", &eValue);
-#else
-                printf("请输入需要更新元素的学号：");
-                scanf("%s", eValue.cExamNo);
-                // 				printf("请输入更新元素的姓名:");
-                // 				scanf("%s", eValue.cName);
-#endif
+
                 
                 iState = ListUpdate(ptL, iPosition, &eValue);
                 if (ERROR == iState)
@@ -186,18 +171,13 @@ int main(int argc, const char * argv[])
                 
                 printf("请输入插入元素的位置：");
                 scanf("%d", &iPosition);
-#if DEBUG
+
                 printf("请输入需要更新的元素");
                 scanf("%d", &eValue);
-#else
-                printf("请输入需要更新元素的学号：");
-                scanf("%s", eValue.cExamNo);
-                // 				printf("请输入更新元素的姓名:");
-                // 				scanf("%s", eValue.cName);
-#endif
+
                 
                 iState = ListInsert(ptL, iPosition, &eValue);
-                if (OVERFLOW == iState)
+                if (OVERFLOW1 == iState)
                 {
                     printf("空间溢出，申请结点失败！");
                 }
@@ -274,30 +254,17 @@ int main(int argc, const char * argv[])
 // 输出函数
 void OutputElem(elemTypeLkL *peValue)
 {
-#if DEBUG
     printf("%d  ", *peValue);
-#else
-    printf("\n学号为：%s", peValue->cExamNo);
-    printf("\n姓名为：%s", peValue->cName);
-#endif
     
 }
 // 输入函数
 void InputElem(elemTypeLkL *peValue)
 {
-#if DEBUG
     scanf("%d", peValue);
-#else
-    printf("\n请输入学号：");
-    scanf("%s", peValue->cExamNo);
-    printf("请输入姓名：");
-    scanf("%s", peValue->cName);
-#endif
 }
 // 比较函数
 WORD EqualElem(elemTypeLkL *peSource, elemTypeLkL *peTarget)
 {
-#if DEBUG    
     if (*peSource == *peTarget)
     {
         return(TRUE);
@@ -306,18 +273,7 @@ WORD EqualElem(elemTypeLkL *peSource, elemTypeLkL *peTarget)
     {
         return(FALSE);
     }     
-#else
-    int flag;
-    flag = strcmp(peTarget->cExamNo, peSource->cExamNo);
-    if (0 == flag)
-    {
-        return(TRUE);
-    }
-    else
-    {
-        return(FALSE);
-    }       
-#endif
+
 }
 // 菜单选项
 void menu()
