@@ -19,7 +19,7 @@ extern "C" {
 #include <math.h>
 
 /**************************************************************************
- *                          ³£Á¿                                            *
+ *                          å¸¸é‡                                            *
  **************************************************************************/
 
 typedef unsigned char       BYTE;
@@ -27,21 +27,21 @@ typedef signed   short  int WORD;
 typedef signed   long   int DWORD;
 
 /**************************************************************************
- *                          ºê¶¨Òå                                         *
+ *                          å®å®šä¹‰                                         *
  **************************************************************************/
 
 
-#define ILLEGAL    5	// ²»ºÏ·¨
-#define OVERFLOW1 -5	// Òç³ö
+#define ILLEGAL    5	// ä¸åˆæ³•
+#define OVERFLOW1 -5	// æº¢å‡º
 
-#define OK         2	// ³É¹¦
-#define ERROR     -2	// ´íÎó
+#define OK         2	// æˆåŠŸ
+#define ERROR     -2	// é”™è¯¯
 
-#define NOEXIST    3    // ²»´æÔÚ
-#define ISEXIST   -3    // ÒÑ¾­´æÔÚ
+#define NOEXIST    3    // ä¸å­˜åœ¨
+#define ISEXIST   -3    // å·²ç»å­˜åœ¨
 
-#define EQUAL     4		// ÏàµÈ
-#define UNEQUAL  -4		// ²»µÈ
+#define EQUAL     4		// ç›¸ç­‰
+#define UNEQUAL  -4		// ä¸ç­‰
 
 #define TRUE      1
 #define FALSE	  0
