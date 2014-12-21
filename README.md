@@ -37,7 +37,8 @@
 ####串
 ##<a name="dot"/>
 	* 串的模式匹配
-	* KMP
+		1. BF(Brute-Force)算法
+		2. KMP算法
 ####数组与广义表
 ##<a name="dot"/>
 	* 对称矩阵的压缩存储
