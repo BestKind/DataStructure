@@ -1,7 +1,7 @@
 #ifndef _DOUBLELIST_H_
 #define _DOUBLELIST_H_
 
-#include "common.h"
+#include "Common.h"
 
 /**************************************************************************
  *                            数据结构体                                   *

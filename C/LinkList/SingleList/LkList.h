@@ -15,7 +15,7 @@
  * Copyright (c) 2014  SmallLeg Team
  ******************************************************************************/
 
-#include "Types.h"
+#include "Common.h"
 
 #ifndef  _LKLIST_H_
 #define  _LKLIST_H_

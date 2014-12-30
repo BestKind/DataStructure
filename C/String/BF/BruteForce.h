@@ -14,7 +14,7 @@
  * @license ZPL (http://zpl.pub/v1)
  * Copyright (c) 2014  SmallLeg Team
  ******************************************************************************/
-#include "Types.h"
+#include "Common.h"
 
 #ifndef  _BRUTEFORCE_H_
 #define  _BRUTEFORCE_H_
